@@ -1,67 +1,31 @@
-let options = document.querySelectorAll("label");
-let question_title = document.getElementById("question-title");
-let next = document.getElementById("next");
-let rbs = document.querySelectorAll('input[name="answers"]');
-// console.log(rbs[1])
-let count = 1;
-let earned_marks = 0;
-let questions = {
-    1: "What is capital of India",
-    2: "What is capital of Russia",
-    3: "What is capital of USA",
-    4: "What is capital of France"
-};
-let answers = {
-    1: ["Agra", "New Delhi", "Kanpur", "Indore"],
-    2: ["Kostroma", "Samara", "Kazan", "Moscow"],
-    3: ["Washington", "Newyork", "Chicago", "Boston"],
-    4: ["Nice", "Paris", "Lyon", "Toulouse"],
-};
+// gsap.fromTo("h1", { x: -200, y: 100,ease:"linear"}, { x:innerWidth+100, y: 100, duration:8,ease:"linear",repeat:-1 })
 
-let correct = [16,"New Delhi", "Moscow", "Washington", "Paris"];
-// console.log(Object.keys(questions).length)
-function changequestion() {
-    let rbs = document.querySelectorAll('input[name="answers"]');
-    // console.log(rbs)
-    // let selected_answer = document.querySelectorAll("label");
-    // console.log(rbs)
-    let selectedValue;
-    for (const rb of rbs) {
-        if (rb.checked) {
-            // console.log(rb.innerHTML)
-            selectedValue = rb.value;
-            console.log(selectedValue)
-            // console.log(correct[count-2])
-            if (selectedValue == correct[count - 1]) {
-                earned_marks += 5;
-                console.log(earned_marks)
-            }
-            rb.checked = false;
-            break;
-        }
-        // console.log(rb.innerText)
-    }
+// gsap.to("h1", { y: 100, stagger: {
+//     each:0.1,
+//     from:"center"
+// } });
 
+let roll = document.getElementById("roll");
+let pause = document.getElementById("pause");
+let reverse = document.getElementById("reverse");
+let kill = document.getElementById("kill");
 
-    if (count <= Number(Object.keys(questions).length)) {
-
-        question_title.innerText = (count + 1) + " ) " + questions[count];
-        let arr = answers[count];
-        // console.log(arr)
-        for (let index = 0; index < arr.length; index++) {
-            options[index].innerText = arr[index];
-            rbs[index].setAttribute("value", arr[index]);
-
-            // console.log(options[index].innerText)
-
-        }
-        count++;
-    }
-    else {
-        document.body.innerHTML = `<h1 style="text-align:center;">You got ${earned_marks} marks and refresh the page for more attempts.</h1>`
-
-    }
+const start = () => {
+    console.log(Date());
 }
-next.addEventListener("click", changequestion);
-// console.log(question_title.innerText)
-// console.log(options[0].innerText)
+
+
+const end = () => {
+    console.log(Date());
+
+}
+
+let tween = gsap.to("img", { repeatDelay: 1, repeat: 1, rotation: 800, ease: "bounce", duration: 5, y: 400, paused: true, onComplete: end, onStart: start, stagger: { each: 0.3 }, yoyo: true });
+
+
+
+roll.onclick = () => tween.play();
+pause.onclick = () => tween.pause();
+reverse.onclick = () => tween.reverse();
+kill.onclick = () => tween.kill();
+
