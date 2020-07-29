@@ -31,6 +31,14 @@ img {
     flex-wrap: wrap;
 }
 
+.box {
+    margin: 30px;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(216, 216, 23);
+    border-radius: 10px;
+}
+
 button {
     z-index: 9999;
     outline: none;
@@ -40,9 +48,8 @@ button {
     text-align: center;
 }
 
-
-@media screen and (max-width:770px){
-    img{
+@media screen and (max-width:770px) {
+    img {
         width: 60px;
         height: 60px;
     }
