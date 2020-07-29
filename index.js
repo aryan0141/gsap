@@ -20,7 +20,7 @@ const end = () => {
 
 }
 
-let tween = gsap.to("img", { repeatDelay: 1, repeat: 1, rotation: 800, ease: "bounce", duration: 5, y: 400, paused: true, onComplete: end, onStart: start, stagger: { each: 0.3 }, yoyo: true });
+let tween = gsap.to("img", { repeat: 1, rotation: 800, ease: "expo", duration: 5, y: 400, paused: true, onComplete: end, onStart: start, stagger: { each: 0.3 }, yoyo: true });
 
 
 
@@ -29,3 +29,4 @@ pause.onclick = () => tween.pause();
 reverse.onclick = () => tween.reverse();
 kill.onclick = () => tween.kill();
 
+gsap.to(".box", { rotation: 27, duration: 2, yoyo: true, repeat: -1, ease: 'sine', x: 1000 })
