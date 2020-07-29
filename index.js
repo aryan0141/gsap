@@ -29,4 +29,4 @@ pause.onclick = () => tween.pause();
 reverse.onclick = () => tween.reverse();
 kill.onclick = () => tween.kill();
 
-gsap.to(".box", { rotation: 27, duration: 2, yoyo: true, repeat: -1, ease: 'sine', x: innerWidth-400 })
+gsap.to(".box", { rotation: 27, duration: 2, yoyo: true, repeat: -1, ease: 'sine', x: innerWidth-150 })
