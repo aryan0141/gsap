@@ -4,15 +4,6 @@
     /* box-sizing: border-box; */
 }
 
-/* 
-body{
-    overflow-x: hidden;
-} */
-
-/* h1{
-    display: inline-block;
-} */
-
 #demo {
     display: flex;
     justify-content: center;
@@ -46,6 +37,17 @@ button {
     height: 40px;
     margin: 20px;
     text-align: center;
+}
+
+#changetext {
+    background-color: rebeccapurple;
+    transform: translate(10px, 20px);
+    transition: width 2s;
+    width: 100px;
+}
+
+#changetext:hover {
+    width: 200px;
 }
 
 @media screen and (max-width:770px) {
