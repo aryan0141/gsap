@@ -32,7 +32,7 @@ pause.onclick = () => tween.pause();
 reverse.onclick = () => tween.reverse();
 kill.onclick = () => tween.kill();
 
-gsap.to(".box", { rotation: 27, duration: 2, yoyo: true, repeat: -1, ease: 'sine', x: 1000 })
+gsap.to(".box", { rotation: 27, duration: 2, yoyo: true, repeat: -1, ease: 'sine', x: innerWidth-150 })
 gsap.to("#rect", { duration: 1, repeat: -1, yoyo: true, repeatDelay: 0.3, attr: { x: 100, y: 100, width: 100, height: 100 }, ease: "linear" });
 
 // gsap.to("#changetext", { duration: 4, text: { value: "Learning GSAP/Text Plugin", delimiter: "", speed: 0.1, newClass: "Ohhhh" }, ease: "linear" })
