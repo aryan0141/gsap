@@ -1,2 +1,2 @@
 # gsap
-Learning about GSAP 3
+GSAP-3 library is used here to create animations in a webpage.
